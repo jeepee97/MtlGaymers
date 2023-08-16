@@ -7,8 +7,8 @@ HDMI_NAME_2 = "XWAYLAND2"
 jukeboxAPI_bp = Blueprint('jukeboxAPI', __name__)
 
 # check for connected devices
-@jukeboxAPI_bp.route("/devices/", methods=['GET'])
-def devices():
+@jukeboxAPI_bp.route("/status/", methods=['GET'])
+def status():
 	if (platform != "linux" or platform != "linux2"):
 		return "This doesn't seem to be executing on the Jukebox"
 
