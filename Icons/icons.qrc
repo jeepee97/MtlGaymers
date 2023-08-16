@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>add_circle_FILL1_wght600_GRAD0_opsz48.png</file>
+    <file>cancel_FILL1_wght600_GRAD0_opsz48.png</file>
+    <file>close_FILL1_wght600_GRAD0_opsz48.png</file>
+    <file>home_FILL1_wght600_GRAD0_opsz48.png</file>
+    <file>logout_FILL1_wght600_GRAD0_opsz48.png</file>
+    <file>menu_FILL1_wght600_GRAD0_opsz48.png</file>
+    <file>refresh_FILL1_wght600_GRAD0_opsz48.png</file>
+    <file>search_FILL1_wght600_GRAD0_opsz48.png</file>
+    <file>settings_FILL1_wght600_GRAD0_opsz48.png</file>
+  </qresource>
+</RCC>
