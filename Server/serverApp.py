@@ -5,8 +5,9 @@ from routes.userLogin import user_login_bp
 from routes.userLogout import user_logout_bp
 
 class ServerApp:
-	def __init__(self, hostname):
+	def __init__(self, hostname, port):
 		self.hostname = hostname
+		self.port = port
 
 	def start(self):
 		self.startAPI()
@@ -15,7 +16,7 @@ class ServerApp:
 	def startAPI(self):
 		serverAPI = Flask(__name__)
 		self.register_all_blueprints(serverAPI)
-		serverAPI.run(debug=False, host=self.hostname)
+		serverAPI.run(debug=False, host=self.hostname, port=self.port)
 
 	def register_all_blueprints(self, serverAPI):
 		serverAPI.register_blueprint(serverAPI_bp, url_prefix='/server')
