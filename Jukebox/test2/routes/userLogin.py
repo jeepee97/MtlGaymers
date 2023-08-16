@@ -17,3 +17,10 @@ def user_login():
 	except:
 		return "", 401
 
+# check for connected devices
+@user_login_bp.route("/logout")
+def user_logout():
+	username = request.args.get("username")
+	if (Login_Service.user_exists(username)):
+		return f"{username} logout"
+	return f"{username} does not exist"
