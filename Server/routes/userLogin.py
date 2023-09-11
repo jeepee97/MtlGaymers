@@ -25,3 +25,15 @@ def user_logout():
 		return f"{username} logout"
 	return f"{username} does not exist"
 
+# change password
+@user_login_bp.route("/changepsw")
+def user_change_password():
+	email = request.args.get("email")
+	
+	# authenticated user
+	if (email == None):
+		pass
+	# unauthenticated user
+	else:
+		pass
+
