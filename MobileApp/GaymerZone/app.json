@@ -4,10 +4,10 @@
     "slug": "GaymerZone",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logos/Logo_Controller.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logos/Name.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

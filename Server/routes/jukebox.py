@@ -1,4 +1,5 @@
 from flask import Blueprint, request
+import json
 from services.jukeboxService import Jukebox_Service
 
 jukebox_bp = Blueprint('jukebox', __name__)
@@ -20,5 +21,22 @@ def get_status():
 			return response, status
 	except:
 		return "", 401
+	
+@jukebox_bp.route("/songs", methods=['GET'])
+def get_songs():
+	value = {
+		"songs": [
+			{
+				"name": "song1",
+				"description":  "description1"
+			},
+			{
+				"name": "song2",
+				"description": "description2"
+			}
+		]
+	}
+
+	return json.dumps(value), 200
 
 
