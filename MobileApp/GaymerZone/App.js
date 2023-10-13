@@ -4,8 +4,9 @@ import {Provider as PaperProvider, TextInput} from 'react-native-paper';
 
 import { LoginScreen } from './app/screens/login/login.screen';
 import { theme } from './App.style';
-import GoalItem from './components/GoalItem';
-import GoalInput from './components/GoalInput';
+import GoalItem from './app/components/GoalItem';
+import GoalInput from './app/components/GoalInput';
+import { RegisterScreen } from './app/screens/register/register.screen';
 
 
 export default function App() {
@@ -30,7 +31,7 @@ export default function App() {
 
   return (
     <PaperProvider theme={theme}>
-      <LoginScreen/>
+      <RegisterScreen/>
     </PaperProvider>
   );
 

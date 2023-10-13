@@ -5,6 +5,8 @@ export const theme = {
     colors: {
         ...DefaultTheme.colors,
         primary: 'rgb(101,37,131)',
-        surfaceVariant: 'transparent'
+        surface: 'rgb(101,37,131)',
+        onSurface: 'white',
+        surfaceVariant: 'transparent',
     }
 }
