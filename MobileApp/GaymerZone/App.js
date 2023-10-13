@@ -7,6 +7,7 @@ import { theme } from './App.style';
 import GoalItem from './app/components/GoalItem';
 import GoalInput from './app/components/GoalInput';
 import { RegisterScreen } from './app/screens/register/register.screen';
+import { HomeScreen } from './app/screens/home/home.screen';
 
 
 export default function App() {
@@ -31,7 +32,7 @@ export default function App() {
 
   return (
     <PaperProvider theme={theme}>
-      <RegisterScreen/>
+      <HomeScreen/>
     </PaperProvider>
   );
 

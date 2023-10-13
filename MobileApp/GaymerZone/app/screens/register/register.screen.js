@@ -6,7 +6,7 @@ import { HeaderComponent } from "../../components/header/header.component";
 
 export const RegisterScreen = () => {
     return (
-        <SafeAreaView style={styleText.AndroidSafeArea}>
+        <SafeAreaView style={registerStyle.AndroidSafeArea}>
             <ScrollView>
                 <HeaderComponent title="Register"/>
                 <View style={registerStyle.content}>
@@ -21,11 +21,3 @@ export const RegisterScreen = () => {
         </SafeAreaView>
     );
 }
-
-const styleText = StyleSheet.create({
-    AndroidSafeArea: {
-      flex: 1,
-      backgroundColor: "white",
-      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
-    }
-});
