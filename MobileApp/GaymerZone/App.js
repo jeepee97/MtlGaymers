@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import { StyleSheet, View, FlatList, Button } from 'react-native';
+import {Provider as PaperProvider, TextInput} from 'react-native-paper';
+
+import { LoginScreen } from './app/screens/login/login.screen';
+import { theme } from './App.style';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
 
@@ -25,6 +29,12 @@ export default function App() {
   }
 
   return (
+    <PaperProvider theme={theme}>
+      <LoginScreen/>
+    </PaperProvider>
+  );
+
+  return (
     <View style={styles.appContainer}>
       <Button title='Add new goal' color='#5E0ACC' onPress={startAddGoalHandler}/>
       <GoalInput onAddGoal={addGoalHandler} visible={modalIsVisible}/>
@@ -43,6 +53,12 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  appContainer: {
+    marginTop: 40
+  }
+})
+
+const styles2 = StyleSheet.create({
   appContainer: {
     flex: 1,
     paddingTop: 50,
