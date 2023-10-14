@@ -2,12 +2,11 @@ import { useState } from 'react'
 import { StyleSheet, View, FlatList, Button } from 'react-native';
 import {Provider as PaperProvider, TextInput} from 'react-native-paper';
 
-import { LoginScreen } from './app/screens/login/login.screen';
 import { theme } from './App.style';
+import { AppNavigator } from './app/app.navigator';
 import GoalItem from './app/components/GoalItem';
 import GoalInput from './app/components/GoalInput';
-import { RegisterScreen } from './app/screens/register/register.screen';
-import { HomeScreen } from './app/screens/home/home.screen';
+import { LoginScreen } from './app/screens/login/login.screen';
 
 
 export default function App() {
@@ -32,7 +31,7 @@ export default function App() {
 
   return (
     <PaperProvider theme={theme}>
-      <HomeScreen/>
+      <AppNavigator/>
     </PaperProvider>
   );
 

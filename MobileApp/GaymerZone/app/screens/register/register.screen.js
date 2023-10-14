@@ -4,7 +4,10 @@ import { Button, TextInput } from "react-native-paper";
 import { registerStyle } from "./register.style";
 import { HeaderComponent } from "../../components/header/header.component";
 
-export const RegisterScreen = () => {
+export const RegisterScreen = (props) => {
+    const register = () => props.navigation.navigate("Home");
+
+
     return (
         <SafeAreaView style={registerStyle.AndroidSafeArea}>
             <ScrollView>
@@ -15,7 +18,7 @@ export const RegisterScreen = () => {
                     <TextInput label="Password" secureTextEntry={true} right={<TextInput.Icon icon="eye-off-outline" color={registerStyle.icon.color}/>}/>
                     <TextInput label="Confirm password" secureTextEntry={true} right={<TextInput.Icon icon="eye-off-outline" color={registerStyle.icon.color}/>}/>
                     <TextInput label="Phone number" keyboardType="phone-pad"/>
-                    <Button mode="contained" style={registerStyle.button}>Register</Button>
+                    <Button onPress={register} mode="contained" style={registerStyle.button}>Register</Button>
                 </View>
             </ScrollView>
         </SafeAreaView>
