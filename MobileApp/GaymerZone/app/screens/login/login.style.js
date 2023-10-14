@@ -1,22 +1,26 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
+import { theme } from '../../../App.style';
 
 export const loginStyle = StyleSheet.create({
     content: {
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         display: "flex",
         flex: 1,
         justifyContent: "center",
         alignItems: 'center',
         flexDirection: 'row',
-        backgroundColor: 'rgb(101,37,131)'
+        backgroundColor: theme.colors.primary
     },
     view: {
         width: '80%'
     },
-    cardTitle: {
-        color: 'rgb(101,37,131)'
+    image: {
+        flex: 1,
+        width: null,
+        height: null,
+        resizeMode: 'contain'
     },
-    cardButton: {
-        marginTop: 2,
-        marginBottom: 2
-    }
+    card: {
+        flex: 2
+    },
 })
