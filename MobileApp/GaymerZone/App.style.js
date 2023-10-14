@@ -4,6 +4,48 @@ export const theme = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
+        primary: '#f15c5b',
+        secondary: 'red',
+        tertiary: 'red',
+        background: 'red',
+        surface: '#f15c5b',
+        onSurface: 'black',
+        surfaceVariant: 'transparent',
+    }
+}
+
+export const adminTheme = {
+    ...DefaultTheme,
+    colors: {
+        ...DefaultTheme.colors,
+        primary: '#f89a20',
+        secondary: 'red',
+        tertiary: 'red',
+        background: 'red',
+        surface: '#f89a20',
+        onSurface: 'black',
+        surfaceVariant: 'transparent',
+    }
+}
+
+export const memberTheme = {
+    ...DefaultTheme,
+    colors: {
+        ...DefaultTheme.colors,
+        primary: '#2d95bf',
+        secondary: 'red',
+        tertiary: 'red',
+        background: 'red',
+        surface: '#2d95bf',
+        onSurface: 'black',
+        surfaceVariant: 'transparent',
+    }
+}
+
+export const guestTheme = {
+    ...DefaultTheme,
+    colors: {
+        ...DefaultTheme.colors,
         primary: '#955ca5',
         secondary: 'red',
         tertiary: 'red',

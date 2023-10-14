@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { StyleSheet, View, FlatList, Button } from 'react-native';
 import {Provider as PaperProvider, TextInput} from 'react-native-paper';
 
-import { theme } from './App.style';
+import { adminTheme, guestTheme, memberTheme, theme } from './App.style';
 import { AppNavigator } from './app/app.navigator';
 import GoalItem from './app/components/GoalItem';
 import GoalInput from './app/components/GoalInput';
@@ -10,6 +10,9 @@ import { LoginScreen } from './app/screens/login/login.screen';
 
 
 export default function App() {
+  const [isUserAdmin, setIsUserAdmin] = useState(false);
+  const [isUserMember, setIsUserMember] = useState(true);
+  const [isUserGuest, setIsUserGuest] = useState(false);
   const [modalIsVisible, setModalIsVisible] = useState(false);
   const [courseGoals, setCourseGoals] = useState([]);
 
@@ -28,9 +31,20 @@ export default function App() {
     });
     console.log('delete');
   }
+  function getTheme() {
+    if (isUserAdmin) {
+      return adminTheme;
+    } else if (isUserMember) {
+      return memberTheme;
+    } else if (isUserGuest) {
+      return guestTheme;
+    } else {
+      return theme;
+    }
+  }
 
   return (
-    <PaperProvider theme={theme}>
+    <PaperProvider theme={getTheme()}>
       <AppNavigator/>
     </PaperProvider>
   );
