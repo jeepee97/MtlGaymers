@@ -1,22 +1,24 @@
 import React from 'react'
 import { View } from 'react-native';
-import { Button, Card, TextInput, IconButton } from 'react-native-paper';
-import { loginStyle } from '../login.style';
-import { theme } from '../../../../App.style';
+import { Button, Card, TextInput, IconButton, Text } from 'react-native-paper';
+import { memberLoginStyle } from './loginMember.style';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const LoginMember = (props) =>{
     return (
-        <View>
-            <Button mode="containeds">test</Button>
-            <Card>
-                <Card.Content>
-                    <TextInput label="Email" keyboardType='email-address'></TextInput>
-                    <TextInput label="Password" secureTextEntry={true}></TextInput>
-                    <Button style={loginStyle.cardButton}>Forgot email/password</Button>
-                    <Button onPress={props.login} style={loginStyle.cardButton} mode="contained">Login</Button>
-                    <Button onPress={props.register} style={loginStyle.cardButton} mode="outlined">Register</Button>
-                </Card.Content>
-            </Card>
-        </View>
+        <SafeAreaView style={memberLoginStyle.content}>
+            <View style={memberLoginStyle.view}>
+                <Text variant='headlineLarge' style={memberLoginStyle.title}>Member</Text>
+                <Card>
+                    <Card.Content>
+                        <TextInput label="Email" keyboardType='email-address'></TextInput>
+                        <TextInput label="Password" secureTextEntry={true}></TextInput>
+                        <Button style={memberLoginStyle.cardButton}>Forgot email/password</Button>
+                        <Button onPress={props.login} style={memberLoginStyle.cardButton} mode="contained">Login</Button>
+                        <Button onPress={props.register} style={memberLoginStyle.cardButton} mode="outlined">Register</Button>
+                    </Card.Content>
+                </Card>
+            </View>
+        </SafeAreaView>
     )
 }

@@ -14,11 +14,11 @@ export const LoginScreen = (props) => {
         <SafeAreaView style={loginStyle.content}>
             <View style={loginStyle.view}>
                 <Image style={loginStyle.image} source={require("../../../assets/logos/Name.png")} />
-                <View style={loginStyle.card}>
+                <View style={loginStyle.cardView}>
                     <Card>
                         <Card.Content>
                             <Button onPress={loginMember} style={loginStyle.cardButton} mode="contained">Members login</Button>
-                            <Button onPress={loginGuest} style={loginStyle.cardButton} mode="outlined">Guest login</Button>
+                            <Button onPress={loginGuest} style={loginStyle.cardButton} mode="outlined">Guests login</Button>
                         </Card.Content>
                     </Card>
                 </View>

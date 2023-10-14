@@ -20,15 +20,11 @@ export const loginStyle = StyleSheet.create({
         height: null,
         resizeMode: 'contain'
     },
-    card: {
+    cardView: {
         flex: 2
     },
     cardButton: {
         marginTop: 2,
         marginBottom: 2
     },
-    backButton: {
-        marginLeft: 0,
-        padding: 0
-    }
 })
