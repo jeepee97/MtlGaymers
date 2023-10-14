@@ -4,8 +4,9 @@ import { Button, Card, Text, TextInput } from 'react-native-paper';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { guestLoginStyle } from "./loginGuest.style";
 
-export const LoginGuest = (props) =>
-{
+export const LoginGuest = (props) =>{
+    const login = () => props.navigation.navigate("Home");
+
     return (
         <SafeAreaView style={guestLoginStyle.content}>
             <View style={guestLoginStyle.view}>
@@ -13,7 +14,7 @@ export const LoginGuest = (props) =>
                 <Card>
                     <Card.Content>
                         <TextInput label="Phone number" keyboardType='phone-pad'></TextInput>
-                        <Button onPress={props.login} style={guestLoginStyle.cardButton} mode="contained">Login</Button>
+                        <Button onPress={login} style={guestLoginStyle.cardButton} mode="contained">Login</Button>
                     </Card.Content>
                 </Card>
             </View>

@@ -5,8 +5,6 @@ import { Button, Card } from 'react-native-paper';
 import { loginStyle } from './login.style';
 
 export const LoginScreen = (props) => {
-    const login = () => props.navigation.navigate("Home");
-    const register = () => props.navigation.navigate("Register");
     const loginMember = () => props.navigation.navigate("LoginMember");
     const loginGuest = () => props.navigation.navigate("LoginGuest");
 
