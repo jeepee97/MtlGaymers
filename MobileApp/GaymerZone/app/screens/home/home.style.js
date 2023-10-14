@@ -4,7 +4,14 @@ import { theme } from '../../../App.style';
 export const homeStyle = StyleSheet.create({
     AndroidSafeArea: {
         flex: 1,
-        backgroundColor: "white",
+        backgroundColor: 'black',
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     },
+    view: {
+        marginLeft: 10,
+        marginRight: 10,
+    },
+    surface: {
+        margin: '10%'
+    }
 })
