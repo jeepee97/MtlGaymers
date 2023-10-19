@@ -9,7 +9,29 @@ export const LoginMember = (props) =>{
     const style = memberLoginStyle(theme);
 
     const login = () => props.navigation.navigate("Home");
-    const register = () => props.navigation.navigate("Register");
+    const register = () => {
+        var resp = fetch('http://143.198.43.72:8000/user/login', {
+            method: "GET",
+            headers: {
+                username: 1,
+                password: 15181
+            }})
+            .then(response => response.json())
+            .then(json => {
+                return json
+            })
+            .catch(error => {
+                console.log(error);
+            })
+            
+        if (resp) {
+            console.log("it works...");
+            console.log(resp);
+            props.navigation.navigate("Register");
+        } else {
+            console.log("something went wrong...");
+        }
+    }
 
     return (
         <SafeAreaView style={style.content}>
