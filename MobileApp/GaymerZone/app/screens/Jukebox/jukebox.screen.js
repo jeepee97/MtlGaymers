@@ -3,6 +3,7 @@ import { FlatList, SafeAreaView, View } from "react-native";
 import { HeaderComponent } from "../../components/header/header.component";
 import { Card, Text, useTheme } from "react-native-paper";
 import { jukeboxStyle } from "./jukebox.style";
+import { SongComponent } from "../../components/Jukebox/song.component";
 
 
 export const JukeboxScreen = () => {
@@ -24,10 +25,7 @@ export const JukeboxScreen = () => {
                     data={songs}
                     keyExtractor={(item, index) => {return item.id;}}
                     renderItem={(itemData) => {return(
-                        <Card>
-                            <Text>test</Text>
-
-                        </Card>
+                        <SongComponent title={itemData.item.text}/>
                     )} }
                 />
             </View>

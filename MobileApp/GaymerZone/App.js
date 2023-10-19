@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { StyleSheet, View, FlatList, Button } from 'react-native';
+import { StyleSheet, View, FlatList, Button, StatusBar } from 'react-native';
 import {Provider as PaperProvider, TextInput} from 'react-native-paper';
 
 import { adminTheme, guestTheme, memberTheme, theme } from './App.style';
@@ -45,6 +45,7 @@ export default function App() {
 
   return (
     <PaperProvider theme={getTheme()}>
+      <StatusBar backgroundColor='black' barStyle={"light-content"}/>
       <AppNavigator/>
     </PaperProvider>
   );
