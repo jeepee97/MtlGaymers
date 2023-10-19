@@ -1,7 +1,7 @@
 import { StyleSheet, StatusBar } from 'react-native';
 import { theme } from '../../../App.style';
 
-export const homeStyle = theme => (StyleSheet.create({
+export const jukeboxStyle = theme => (StyleSheet.create({
     AndroidSafeArea: {
         flex: 1,
         backgroundColor: 'black',

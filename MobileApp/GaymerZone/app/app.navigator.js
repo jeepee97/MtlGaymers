@@ -6,6 +6,7 @@ import { HomeScreen } from "./screens/home/home.screen";
 import { RegisterScreen } from "./screens/register/register.screen"
 import { LoginMember } from "./screens/login/loginMember/loginMember.screen";
 import { LoginGuest } from "./screens/login/loginGuest/loginGuest.screen";
+import { JukeboxScreen } from "./screens/Jukebox/jukebox.screen";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ export const AppNavigator = () => {
                 <Screen name="LoginGuest" component={LoginGuest}></Screen>
                 <Screen name="Home" component={HomeScreen}></Screen>
                 <Screen name="Register" component={RegisterScreen}></Screen>
+                <Screen name="Jukebox" component={JukeboxScreen}></Screen>
             </Navigator>
         </NavigationContainer>
     );

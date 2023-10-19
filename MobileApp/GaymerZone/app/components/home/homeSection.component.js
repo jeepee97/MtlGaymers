@@ -11,7 +11,7 @@ export const HomeSectionComponent = (props) => {
 
     return (
         <View style={style.view}>
-            <Pressable android_ripple={{color: '#dddddd'}} style={style.pressable}>
+            <Pressable android_ripple={{color: '#dddddd'}} style={style.pressable} onPress={props.onPress}>
                 <FontAwesomeIcon icon={props.icon} size={40} style={style.icon}/>
                 <Text variant="headlineLarge">{props.title}</Text>
             </Pressable>

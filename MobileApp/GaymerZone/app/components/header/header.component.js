@@ -8,8 +8,8 @@ export const HeaderComponent = (props) => {
             <Appbar>
                 <Appbar.BackAction/>
                 <Appbar.Content title={props.title}/>
-                <Appbar.Action icon='calendar' size={40} color="black" onPress={() => {}}/>
-                <Appbar.Action icon='account' size={40} color="black" onPress={() => {}}/>
+                {props.showCalender ?? <Appbar.Action icon='calendar' size={40} color="black" onPress={() => {}}/> }
+                {props.showAccount ?? <Appbar.Action icon='account' size={40} color="black" onPress={() => {}}/> }
             </Appbar>
         </View>
     );
