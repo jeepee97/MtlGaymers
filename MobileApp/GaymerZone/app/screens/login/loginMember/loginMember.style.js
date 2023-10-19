@@ -1,19 +1,19 @@
 import { StyleSheet } from 'react-native';
 import { loginStyle } from "../login.style";
 
-export const memberLoginStyle = StyleSheet.create({
+export const memberLoginStyle = theme => (StyleSheet.create({
     content: {
-        ...loginStyle.content,
+        ...loginStyle(theme).content,
         alignItems: 'flex-start',
     },
     view: {
-        ...loginStyle.view,
+        ...loginStyle(theme).view,
         marginTop: '30%'
     },
     cardButton: {
-        ...loginStyle.cardButton
+        ...loginStyle(theme).cardButton
     },
     title: {
         textAlign: 'center'
     }
-})
+}))

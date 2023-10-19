@@ -1,7 +1,6 @@
 import { StyleSheet, StatusBar } from 'react-native';
-import { theme } from '../../../App.style';
 
-export const loginStyle = StyleSheet.create({
+export const loginStyle = theme => (StyleSheet.create({
     content: {
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         display: "flex",
@@ -27,4 +26,4 @@ export const loginStyle = StyleSheet.create({
         marginTop: 2,
         marginBottom: 2
     },
-})
+}))

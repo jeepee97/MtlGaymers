@@ -10,9 +10,9 @@ import { LoginScreen } from './app/screens/login/login.screen';
 
 
 export default function App() {
-  const [isUserAdmin, setIsUserAdmin] = useState(false);
-  const [isUserMember, setIsUserMember] = useState(true);
-  const [isUserGuest, setIsUserGuest] = useState(false);
+  const [isUserAdmin, setIsUserAdmin] = useState(true);
+  const [isUserMember, setIsUserMember] = useState(false);
+  const [isUserGuest, setIsUserGuest] = useState(true);
   const [modalIsVisible, setModalIsVisible] = useState(false);
   const [courseGoals, setCourseGoals] = useState([]);
 

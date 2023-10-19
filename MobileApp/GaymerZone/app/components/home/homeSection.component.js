@@ -7,19 +7,19 @@ import { faMusic } from '@fortawesome/free-solid-svg-icons/faMusic';
 
 export const HomeSectionComponent = (props) => {
     const theme = useTheme();
-    const test = useStyles(theme);
+    const style = homeSectionStyle(theme);
 
     return (
-        <View style={test.view}>
-            <Pressable android_ripple={{color: '#dddddd'}} style={test.pressable}>
-                <FontAwesomeIcon icon={props.icon} size={40} style={test.icon}/>
+        <View style={style.view}>
+            <Pressable android_ripple={{color: '#dddddd'}} style={style.pressable}>
+                <FontAwesomeIcon icon={props.icon} size={40} style={style.icon}/>
                 <Text variant="headlineLarge">{props.title}</Text>
             </Pressable>
         </View>
     );
 }
 
-const useStyles = theme => (StyleSheet.create(({
+const homeSectionStyle = theme => (StyleSheet.create(({
     view: {
         marginTop: 10,
         borderRadius: 6,
@@ -36,21 +36,3 @@ const useStyles = theme => (StyleSheet.create(({
         marginLeft: 10
     }
 })))
-
-// const homeSectionStyle =  StyleSheet.create({
-//     view: {
-//         marginTop: 10,
-//         borderRadius: 6,
-//         backgroundColor: theme.colors.primary,
-//         height: 70
-//     },
-//     pressable: {
-//         flex:1,
-//         flexDirection: 'row',
-//         alignItems: 'center'
-//     },
-//     icon: {
-//         marginRight: 10,
-//         marginLeft: 10
-//     }
-// })
