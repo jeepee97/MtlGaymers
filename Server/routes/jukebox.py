@@ -38,5 +38,3 @@ def get_songs():
 	}
 
 	return json.dumps(value), 200
-
-
