@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View } from 'react-native';
 import { Button, Card, TextInput, IconButton, Text, useTheme } from 'react-native-paper';
 import { memberLoginStyle } from './loginMember.style';
@@ -7,26 +7,21 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export const LoginMember = (props) =>{
     const theme = useTheme();
     const style = memberLoginStyle(theme);
+    const [data, setData] = useState([]);
 
     const login = () => props.navigation.navigate("Home");
-    const register = () => {
-        var resp = fetch('http://143.198.43.72:8000/user/login', {
+    const register = async () => {
+        const resp = await fetch('http://143.198.43.72:8000/user/login', {
             method: "GET",
             headers: {
                 username: 1,
-                password: 15181
-            }})
-            .then(response => response.json())
-            .then(json => {
-                return json
-            })
-            .catch(error => {
-                console.log(error);
-            })
+                password: 1
+        }})
+        const json = await resp.json()
+        setData(json.description)
             
-        if (resp) {
-            console.log("it works...");
-            console.log(resp);
+        console.log(json)
+        if (json.description == "login!!!") {
             props.navigation.navigate("Register");
         } else {
             console.log("something went wrong...");

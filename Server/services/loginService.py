@@ -3,6 +3,7 @@ from classes.user import User
 users = []
 for i in range(10):
 	users.append(User(str(i), str(i)))
+users.append(User('test', 'test'))
 
 class Login_Service:
 	def __init__(self):
@@ -10,6 +11,7 @@ class Login_Service:
 
 	def validate_user(username, password):
 		for user in users:
+			print(username, password)
 			if (user.username == username and user.password == password):
 				return True
 		return False
