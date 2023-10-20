@@ -7,20 +7,25 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export const LoginMember = (props) =>{
     const theme = useTheme();
     const style = memberLoginStyle(theme);
-    const [data, setData] = useState([]);
+    const [username, setUsername] = useState(0)
+    const [password, setPassword] = useState(0)
 
-    const login = () => props.navigation.navigate("Home");
-    const register = async () => {
-        const resp = await fetch('http://143.198.43.72:8000/user/login', {
-            method: "GET",
-            headers: {
-                username: 1,
-                password: 1
-        }})
+    const login = async () => {
+        const resp = await fetch("http://143.198.43.72:8000/usewr/login?username=" + username + "&password=" + password, {
+            method: "GET"})
         const json = await resp.json()
-        setData(json.description)
-            
-        console.log(json)
+        
+        if (json.description == "login!!!") {
+            props.navigation.navigate("Home");
+        } else {
+            console.log("something went wrong...");
+        }
+    }
+    const register = async () => {
+        const resp = await fetch("http://143.198.43.72:8000/user/login?username=" + username + "&password=" + password, {
+            method: "GET"})
+        const json = await resp.json()
+
         if (json.description == "login!!!") {
             props.navigation.navigate("Register");
         } else {
