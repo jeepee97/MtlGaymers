@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View } from 'react-native';
+import { Keyboard, View } from 'react-native';
 import { Button, Card, TextInput, IconButton, Text, useTheme } from 'react-native-paper';
 import { memberLoginStyle } from './loginMember.style';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -11,26 +11,23 @@ export const LoginMember = (props) =>{
     const [password, setPassword] = useState(0)
 
     const login = async () => {
-        const resp = await fetch("http://143.198.43.72:8000/usewr/login?username=" + username + "&password=" + password, {
-            method: "GET"})
-        const json = await resp.json()
-        
-        if (json.description == "login!!!") {
-            props.navigation.navigate("Home");
-        } else {
-            console.log("something went wrong...");
-        }
+        Keyboard.dismiss()
+        const query = "http://143.198.43.72:8000/user/login?username=" + username + "&password=" + password
+        const resp = await fetch(query, {method: "GET"})
+        .then(resp => resp.json())
+        .then(json => {
+            if (json.description == 'login!!!') {
+                props.navigation.navigate("Home")
+            } else {
+                console.log("something went wrong...")
+            }
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
     const register = async () => {
-        const resp = await fetch("http://143.198.43.72:8000/user/login?username=" + username + "&password=" + password, {
-            method: "GET"})
-        const json = await resp.json()
-
-        if (json.description == "login!!!") {
-            props.navigation.navigate("Register");
-        } else {
-            console.log("something went wrong...");
-        }
+        props.navigation.navigate("Register");
     }
 
     return (
@@ -39,8 +36,8 @@ export const LoginMember = (props) =>{
                 <Text variant='headlineLarge' style={style.title}>Member</Text>
                 <Card>
                     <Card.Content>
-                        <TextInput label="Email" keyboardType='email-address'></TextInput>
-                        <TextInput label="Password" secureTextEntry={true}></TextInput>
+                        <TextInput label="Email" keyboardType='email-address' onChangeText={setUsername}></TextInput>
+                        <TextInput label="Password" secureTextEntry={true} onChangeText={setPassword}></TextInput>
                         <Button style={style.cardButton}>Forgot email/password</Button>
                         <Button onPress={login} style={style.cardButton} mode="contained">Login</Button>
                         <Button onPress={register} style={style.cardButton} mode="outlined">Register</Button>
