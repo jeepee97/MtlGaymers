@@ -11,7 +11,6 @@ class Login_Service:
 
 	def validate_user(username, password):
 		for user in users:
-			print(username, password)
 			if (user.username == username and user.password == password):
 				return True
 		return False
