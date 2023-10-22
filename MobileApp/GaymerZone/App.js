@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import { StyleSheet, View, FlatList, Button, StatusBar } from 'react-native';
 import {Provider as PaperProvider, TextInput} from 'react-native-paper';
 
@@ -6,37 +6,21 @@ import { adminTheme, guestTheme, memberTheme, theme } from './App.style';
 import { AppNavigator } from './app/app.navigator';
 import GoalItem from './app/components/GoalItem';
 import GoalInput from './app/components/GoalInput';
-import { LoginScreen } from './app/screens/login/login.screen';
-
+import { userTypeContext, userTypes } from './app/app.context';
 
 export default function App() {
-  const [isUserAdmin, setIsUserAdmin] = useState(true);
+  const [isUserAdmin, setIsUserAdmin] = useState(false);
   const [isUserMember, setIsUserMember] = useState(false);
-  const [isUserGuest, setIsUserGuest] = useState(true);
-  const [modalIsVisible, setModalIsVisible] = useState(false);
-  const [courseGoals, setCourseGoals] = useState([]);
+  const [isUserGuest, setIsUserGuest] = useState(false);
 
-  function startAddGoalHandler()
-  {
-    setModalIsVisible(true);
-  }
-  function addGoalHandler(enteredGoalText)
-  {
-    setCourseGoals(currentCourseGoals => [...currentCourseGoals, {text: enteredGoalText, id: Math.random().toString()}]);
-  }
-  function deleteGoalHandler(id)
-  {
-    setCourseGoals(currentCourseGoals => {
-      return currentCourseGoals.filter((goal) => goal.id !== id);
-    });
-    console.log('delete');
-  }
   function getTheme() {
-    if (isUserAdmin) {
+    const userTypeContext = useContext(userTypeContext)
+    console.log("update theme...");
+    if (userTypeContext === userTypes.Admin) {
       return adminTheme;
-    } else if (isUserMember) {
+    } else if (userTypeContext === userTypes.Member) {
       return memberTheme;
-    } else if (isUserGuest) {
+    } else if (userTypeContext === userTypes.Guest) {
       return guestTheme;
     } else {
       return theme;

@@ -4,16 +4,15 @@ export const theme = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
-        primary: '#f15c5b',
+        primary: '#666666',
         secondary: 'red',
         tertiary: 'red',
         background: 'red',
-        surface: '#f15c5b',
+        surface: '#666666',
         onSurface: 'black',
         surfaceVariant: 'transparent',
     }
 }
-
 export const adminTheme = {
     ...DefaultTheme,
     colors: {
@@ -27,7 +26,6 @@ export const adminTheme = {
         surfaceVariant: 'transparent',
     }
 }
-
 export const memberTheme = {
     ...DefaultTheme,
     colors: {
@@ -41,7 +39,6 @@ export const memberTheme = {
         surfaceVariant: 'transparent',
     }
 }
-
 export const guestTheme = {
     ...DefaultTheme,
     colors: {

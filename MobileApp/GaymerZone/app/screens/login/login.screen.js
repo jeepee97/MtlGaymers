@@ -1,12 +1,16 @@
 import React from 'react'
 import { useState } from 'react'
 import { Image, SafeAreaView, View } from 'react-native';
-import { Button, Card, useTheme } from 'react-native-paper';
+import { Button, Card, useTheme, Text } from 'react-native-paper';
 import { loginStyle } from './login.style';
 
 export const LoginScreen = (props) => {
     const theme = useTheme();
     const style = loginStyle(theme);
+    const [test, setTest] = useState("hello")
+    function setTestHandler(value) {
+        setTest(value)
+    }
 
     const loginMember = () => props.navigation.navigate("LoginMember");
     const loginGuest = () => props.navigation.navigate("LoginGuest");
@@ -16,6 +20,7 @@ export const LoginScreen = (props) => {
             <View style={style.view}>
                 <Image style={style.image} source={require("../../../assets/logos/Name.png")} />
                 <View style={style.cardView}>
+                    <Text>{test}</Text>
                     <Card>
                         <Card.Content>
                             <Button onPress={loginMember} style={style.cardButton} mode="contained">Members login</Button>

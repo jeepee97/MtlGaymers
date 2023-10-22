@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Keyboard, View } from 'react-native';
 import { Button, Card, TextInput, IconButton, Text, useTheme } from 'react-native-paper';
 import { memberLoginStyle } from './loginMember.style';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { userTypes, userTypeContext } from '../../../app.context';
 
 export const LoginMember = (props) =>{
     const theme = useTheme();
     const style = memberLoginStyle(theme);
+    // const { setUserType } = useContext(userTypeContext)
     const [username, setUsername] = useState(0)
     const [password, setPassword] = useState(0)
 
@@ -17,6 +19,8 @@ export const LoginMember = (props) =>{
         .then(resp => resp.json())
         .then(json => {
             if (json.description == 'login!!!') {
+                userTypeContext = userTypes.Member
+                // userTypeContext = userTypes.Member
                 props.navigation.navigate("Home")
             } else {
                 console.log("something went wrong...")
